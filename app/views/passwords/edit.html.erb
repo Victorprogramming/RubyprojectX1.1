@@ -1,0 +1,27 @@
+<h1>Edit Password</h1>
+
+<%= form_with model: Current.user, url: edit_password_path do |form| %>
+
+    <%#erorrs.full_messages has render issues for some reason opitah se da go opravq%>
+    <% if form.object.errors.any? %>
+        <div class="alert alert-danger">
+            <% form.object.errors.full_messages.each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-conrtol", placeholder: "password" %>
+    </div >
+    <div class="mb-3">
+        <%= form.label  :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "form-conrtol", placeholder: "confirm password "%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Update Password", class: "btn btn-primary" %>
+    </div>
+    
+<% end %>
