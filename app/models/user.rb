@@ -3,6 +3,8 @@
 #password:string are virtual atribute
 #password_confgirmation:string are virtual atribute 
 class User < ApplicationRecord
+
+    has_many :twitter_accounts
     
     has_secure_password
 
