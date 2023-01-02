@@ -45,6 +45,8 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+
+gem 'rack-cors', :require => 'rack/cors'
 #https://github.com/K-and-R/email_validator
 gem 'email_validator'
 
